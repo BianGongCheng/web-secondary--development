@@ -257,7 +257,15 @@ export default class App extends Component {
                   },
                 },
                 {
+<<<<<<< HEAD
                   xAxis: middleXNum, // x 轴结束位置
+=======
+<<<<<<< HEAD
+                  xAxis: middleXNum, // x 轴结束位置
+=======
+                  xAxis: centerNumConfigArr[0], // x 轴结束位置
+>>>>>>> 6da83ecb334dd41d3f8d6b0d93c21f182167982b
+>>>>>>> 2214641ec29dfde5d7ef75a426dd7f9e37b5f222
                   yAxis: ymin, // y轴开始位置
                 },
               ],
