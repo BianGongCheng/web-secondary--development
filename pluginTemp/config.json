@@ -1,11 +1,7 @@
 {
-  "id": "88594497-448e-4d43-84f2-36e55379f994",
+  "id": "e9d39894-a1d5-4628-89cc-24e6771b3665",
   "type": "analyzer",
-<<<<<<< HEAD
   "main": "main.06479125.js",
-=======
-  "main": "main.b9244644.js",
->>>>>>> 6da83ecb334dd41d3f8d6b0d93c21f182167982b
   "version": "2",
   "props": {
     "img": "custom_table.png",
