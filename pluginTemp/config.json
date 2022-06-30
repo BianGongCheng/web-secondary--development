@@ -1,8 +1,9 @@
 {
-  "id": "e9d39894-a1d5-4628-89cc-24e6771b3665",
+  "id": "8a670415-6ed9-4f56-bab1-1498bae661d3",
   "type": "analyzer",
   "main": "main.06479125.js",
   "version": "2",
+  "baseVersion": "V8R4C50SPC210_RJGC_0620",
   "props": {
     "img": "custom_table.png",
     "type": "qoiwud23fo3",
