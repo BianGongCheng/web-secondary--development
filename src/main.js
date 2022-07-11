@@ -17,16 +17,24 @@ if (process.env.NODE_ENV !== "production") {
             displayed: 1,
             col_index: 1,
             asset_id: "2fd81d3f-6993-0e78-c308-0b06ed7836a8",
-            col_name: "书名",
+            col_name: "企业名",
             col_datatype: 0,
             import_flag: false,
           },
           {
-            displayed: 1,
+            displayed: 2,
             col_index: 2,
             asset_id: "2fd81d3f-6993-0e78-c308-0b06ed7836a8",
-            col_name: "输出书名",
-            col_datatype: 0,
+            col_name: "碳排放量",
+            col_datatype: 1,
+            import_flag: false,
+          },
+          {
+            displayed: 3,
+            col_index: 3,
+            asset_id: "2fd81d3f-6993-0e78-c308-0b06ed7836a8",
+            col_name: "排放强度",
+            col_datatype: 2,
             import_flag: false,
           },
         ],
@@ -40,26 +48,19 @@ if (process.env.NODE_ENV !== "production") {
         shape: "nodeDom",
         data: {
           basicattrs: {
-            classname: "com.sdata.customize.dataflow.CustomizeNode",
+            classname: "com.sdata.ChengDianQueryNodeHZ",
           },
           detail: {
             columns: [
-              {
-                displayed: 1,
-                col_index: 1,
-                asset_id: "2fd81d3f-6993-0e78-c308-0b06ed7836a8",
-                col_name: "书名",
-                col_datatype: 0,
-                import_flag: false,
-              },
+
             ],
           },
           text: {
-            internalName: "书名提取",
+            internalName: "筛选重复值",
             code: "S2",
           },
         },
-        label: "S2:书名提取",
+        label: "S2:筛选重复值",
         output: 999,
         input: 1,
         size: [55, 55],
@@ -69,11 +70,12 @@ if (process.env.NODE_ENV !== "production") {
         nodeid: "EN_98745678a2",
       },
     },
-    currentNode: "S2",
+    currentNode: "S2",//节点名
     nodeCode: "EN_98745678",
     obj_id: "f4705e7a-4a08-4b89-9282-01e2b4ad9301",
+    
     updateNode: detail => {
-      console.log(detail);
+      console.log(detail); 
     },
   };
   new Vue({

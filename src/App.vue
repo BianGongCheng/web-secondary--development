@@ -1,48 +1,23 @@
 <template>
   <div class="custom-node">
     <div class="modleTop">
-      <div
-        class="NodeIcon"
-        :style="{
-          marginTop: '6px',
-          display: icon.html ? 'inline-block' : 'none',
-        }"
-        v-html="icon.html"
-      />
-      <img
-        class="NodeIcon"
-        :src="getIconUrl"
-        alt=""
-        :style="{
-          display: !icon.html ? 'inline-block' : 'none',
-        }"
-      />
-      <el-input
-        placeholder="动态输入"
-        v-model="nodeName"
-        @input="inputChangeVal"
-        :style="{ marginTop: '15px', width: '200px' }"
-      />
+      <div class="NodeIcon" :style="{
+        marginTop: '6px',
+        display: icon.html ? 'inline-block' : 'none',
+      }" v-html="icon.html" />
+      <img class="NodeIcon" :src="getIconUrl" alt="" :style="{
+        display: !icon.html ? 'inline-block' : 'none',
+      }" />
+      <el-input placeholder="动态输入" v-model="nodeName" @input="inputChangeVal"
+        :style="{ marginTop: '15px', width: '200px' }" />
     </div>
     <div class="custom-node-content">
       <div class="content-row">
         <div class="row-left">选择字段：</div>
         <div class="row-right">
-          <el-select
-            :value="selectCols"
-            @change="changeField"
-            placeholder="请选择"
-            class="textClass"
-            multiple
-            collapse-tags
-            :style="{ width: '200px', marginLeft: '10px' }"
-          >
-            <el-option
-              :key="t.col_index"
-              :label="t.col_name"
-              :value="t.col_name"
-              v-for="t in tests"
-            />
+          <el-select :value="selectCols" @change="changeField" placeholder="请选择" class="textClass" collapse-tags
+            multiple :style="{ width: '200px', marginLeft: '10px' }">
+            <el-option :key="t.col_index" :label="t.col_name" :value="t.col_name" v-for="t in tests" />
           </el-select>
         </div>
       </div>
@@ -54,14 +29,17 @@
 export default {
   name: "App",
   props: {
-    currentNode: String,
+    currentNode: String,//节点名
     nodeCode: String,
-    nodeFieldList: Object,
-    nodeInfoList: Object,
-    obj_id: String,
+    nodeFieldList: Object,//
+    nodeInfoList: Object,//
+    obj_id: String,//
     updateNode: Function,
     customIcon: Object,
     img: String,
+  },
+  mounted() {
+
   },
   data() {
     let currentNodes = this.currentNode;
@@ -80,10 +58,13 @@ export default {
       tests,
       selectCols: field.map(_ => _.col_name),
       icon: newIcon,
+      imgUrl: require('../pluginTemp/images/EN_0001.png'),
+      defalutLogoUrl: 'this.src="' + require('../pluginTemp/images/EN_0001.png') + '"'
     };
   },
   methods: {
     updateNode1(newName, newFields) {
+      //和后台约定要传的数据
       let detail = this.detail;
       detail.data = detail.data || {};
       detail.data.detail = detail.data.detail || {};
@@ -113,6 +94,18 @@ export default {
       return `${window.location.origin}/storage_area/ext_plugins/web/${this.obj_id}/images/${this.img}`;
     },
   },
+  watch:{
+    // tests:{
+    //   handler(newValue) {
+    //     console.log('newValue',newValue);
+    //     if(newValue.length > 0){
+    //       this.selectCols = []
+    //     }
+    //   },
+    //   deep:true,
+    //   immediate:true
+    // }
+  }
 };
 </script>
 <style lang="less" scoped>
@@ -120,8 +113,10 @@ export default {
   height: 100%;
   width: 100%;
   background-color: white;
+
   .modleTop {
     display: flex;
+
     .NodeIcon {
       color: #9e9e9e;
       margin-left: 18px;
